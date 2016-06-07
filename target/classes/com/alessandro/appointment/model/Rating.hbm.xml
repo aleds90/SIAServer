@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-mag-2016 15.42.29 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.alessandro.appointment.model.Rating" table="rating" catalog="appointmentsmanager">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userByUserReceiver" class="com.alessandro.appointment.model.User" lazy="false" fetch="select">
+            <column name="user_receiver" />
+        </many-to-one>
+        <many-to-one name="userByUserSender" class="com.alessandro.appointment.model.User" lazy="false" fetch="select">
+            <column name="user_sender" />
+        </many-to-one>
+        <property name="rate" type="java.lang.Integer">
+            <column name="rate" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        
+        <mapping resource="com/alessandro/appointment/model/Rating.hbm.xml"/>
+        <mapping resource="com/alessandro/appointment/model/User.hbm.xml"/>
+        <mapping resource="com/alessandro/appointment/model/Message.hbm.xml"/>
+        <mapping resource="com/alessandro/appointment/model/Reservation.hbm.xml"/>
+        <mapping resource="com/alessandro/appointment/model/Slot.hbm.xml"/>
+        <mapping resource="com/alessandro/appointment/model/Appointment.hbm.xml"/>
+        
+        
+    </session-factory>
+    
+    
+</hibernate-configuration>

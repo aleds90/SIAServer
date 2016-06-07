@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-mag-2016 15.42.29 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.alessandro.appointment.model.Slot" table="slot" catalog="appointmentsmanager">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="reservation" class="com.alessandro.appointment.model.Reservation" lazy="false" fetch="select">
+            <column name="reservation" />
+        </many-to-one>
+        <many-to-one name="appointment" class="com.alessandro.appointment.model.Appointment" lazy="false" fetch="select">
+            <column name="appointment" />
+        </many-to-one>
+        <property name="dataStart" type="string">
+            <column name="dataStart" length="45" />
+        </property>
+        <property name="dataEnd" type="string">
+            <column name="dataEnd" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

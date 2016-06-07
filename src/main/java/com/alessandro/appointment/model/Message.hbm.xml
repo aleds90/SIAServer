@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-mag-2016 15.42.29 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.alessandro.appointment.model.Message" table="message" catalog="appointmentsmanager">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userByReceiver" class="com.alessandro.appointment.model.User" lazy="false" fetch="select">
+            <column name="receiver" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userBySender" class="com.alessandro.appointment.model.User" lazy="false" fetch="select">
+            <column name="sender" not-null="true" />
+        </many-to-one>
+        <property name="text" type="string">
+            <column name="text" length="45" not-null="true" />
+        </property>
+        <property name="date" type="string">
+            <column name="date" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
